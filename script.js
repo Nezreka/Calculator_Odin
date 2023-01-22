@@ -32,37 +32,7 @@ function operate(num1, num2, operation){
 }
 
 function analyze(){
-    if(value != "" && !buildString.includes("=")){
-        userNumbers.push(parseInt(value));
-        buildString += " = ";
-        setBuildString();
-    }
-    let answer = 0;
-    if(userNumbers.length == 2){
-        switch(operator){
-            case "+":
-                answer = add(userNumbers[0], userNumbers[1])
-                break;
-            case "-":
-                answer = subtract(userNumbers[0], userNumbers[1])
-                break;
-            case "/":
-                answer = divide(userNumbers[0], userNumbers[1])
-                break;
-            case "*":
-                answer = multiply(userNumbers[0], userNumbers[1])
-                break;
-            default:
-                console.log("else")
-        }
-        userNumbers = [answer]
-        value = answer;
-        setValue()
     
-    }
-
-    
-    console.log(userNumbers)
 }
 
 function add(num1, num2){
@@ -100,41 +70,12 @@ function forwardLook(){
 }
 
 function operatorPressed(operation){
-    if(userNumbers.length == 0){
-        operator = operation;
 
-        buildString += " " + operation + " "
-
-        userNumbers.push(parseInt(value))
-    }else if(userNumbers.length == 1){
-        operator = operation;
-        buildString = userNumbers[0] + " " + operation + " "
-
-    }else{
-        userNumbers.push(parseInt(value))
-        userNumbers = [operate(userNumbers[0], userNumbers[1], operation)]
-        
-        console.log(userNumbers)
-        buildString = userNumbers[0] + " " + operation;
-        setBuildString()
-        operator = operation;
-    }
-    
-    
-    clearValue();
-    setValueAndBuild()
 }
+   
 
 function numberPressed(number){
 
-    buildString += number;
-    value += number;
-
-    if(userNumbers.length <= 1){
-
-    }
-    
-    setValue();
 }
 
 function setValueAndBuild(){
