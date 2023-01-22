@@ -2,31 +2,13 @@
 
 
 let buildString = "";
-let value = "";
+let value = 0;
 let operator = "";
 const operations = ["+", "-", "/", "*"];
-
+const pie = 3.14159265359;
 
 function analyzeBuildString(){
-    let equation = buildString.split(" ");
-    let firstNum = 0;
-    let op = ""
-    let secondNum = 0;
-    equation.forEach(symbols => {
-        
-        switch(symbols){
-            case "+":
-                break;
-            case "-":
-                break;
-            case "*":
-                break;
-            case "/":
-                break;
-            default:
-
-        }
-    });
+    
 }
 
 function add(num1, num2){
@@ -45,27 +27,20 @@ function divide(num1, num2){
     return num1 / num2
 }
 
+function pi(){
+   
+}
+
+function decimal(){
+    
+}
+
 function operatorPressed(operation){
-    if(buildString == ""){
-        buildString = "0";
-    }
-    buildString += " " + operation + " ";
-    operator = operation;
-    setBuildString();
+    
 }
 
 function numberPressed(number){
-    if(operator == ""){
-        buildString += number;
-        value += number
-    }else{
-        clearOperator();
-        clearValue();
-        buildString += number;
-        value += number;
-    }
-
-    setValue();
+    
 }
 
 function setValueAndBuild(){
@@ -87,23 +62,19 @@ function setBuildString(){
 }
 
 function clearOperator(){
-    operator = "";
+    
 }
 
 function clearBuildString(){
-    buildString = ""
-    setBuildString()
+    
 }
 
 function clearValue(){
-    value = ""
-    setValue()
+   
 }
 
 function allClear(){
-    buildString = "";
-    value = "";
-    setValueAndBuild();
+    
 }
 
 function clear(){
@@ -137,6 +108,12 @@ function buttonClicked(button){
             break;
         case "=":
             analyzeBuildString();
+            break;
+        case ".":
+            decimal()
+            break;
+        case "pi":
+            
             break;
         default:
             console.group("the rest")
