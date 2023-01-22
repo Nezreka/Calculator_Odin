@@ -1,15 +1,78 @@
 body{
-    height: 100vh;
+    height: 100%;
     background-color: black;
-}
-
-
-.mainContent{
     
 }
 
-h1, h2{
-    color: white;
+.title h1{
     text-align: center;
+   
+    margin-bottom: 25px;
 }
 
+
+
+h1, h2, h4, h3{
+    color: white;
+    margin: 0px;
+    transition: .5s;
+}
+
+h3{
+    font-size: 50px;
+}
+
+h2{
+    font-size: 60px;
+}
+
+.calculatorContainer{
+    width: 800px;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white
+}
+
+.numberBox{
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 17.5%;
+    border: 1px solid white;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mathButtons{
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    height: 76%;
+    border: 1px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button{
+    width: 25%;
+    height: 16.66%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255, 0);
+    transition: .5s;
+    cursor: pointer;
+}
+
+.button:hover h3{
+    scale: 1.5;
+    transition: .2s;
+}
+  
