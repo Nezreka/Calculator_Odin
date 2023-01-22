@@ -18,6 +18,10 @@ h1, h2, h4, h3{
     transition: .5s;
 }
 
+h4, h2{
+    padding-right: 25px;
+}
+
 h3{
     font-size: 50px;
 }
