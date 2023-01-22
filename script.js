@@ -46,6 +46,9 @@ function divide(num1, num2){
 }
 
 function operatorPressed(operation){
+    if(buildString == ""){
+        buildString = "0";
+    }
     buildString += " " + operation + " ";
     operator = operation;
     setBuildString();
@@ -71,7 +74,12 @@ function setValueAndBuild(){
 }
 
 function setValue(){
-    document.getElementsByClassName("output")[0].textContent = value;
+    if(value == ""){
+        document.getElementsByClassName("output")[0].textContent = 0
+    }else{
+        document.getElementsByClassName("output")[0].textContent = value;
+
+    }
 }
 
 function setBuildString(){
