@@ -27,7 +27,7 @@ function operate(num1, operation, num2){
         default:
             console.log("else")
     }
-    return answer
+    return answer.toFixed(1)
 }
 
 function add(num1, num2){
@@ -53,6 +53,13 @@ function divide(num1, num2){
     return num1 / num2
 }
 
+function addDecimal(){
+    if(outputValue != ""){
+        outputValue += "."
+        updateValue()
+    }
+}
+
 function numberPressed(num){
     if(operator === "="){
         userNumbers = []
@@ -69,7 +76,7 @@ function operationPressed(operation){
     
     if(operation === "="){
         if(outputValue != ""){
-            userNumbers.push(parseInt(outputValue))
+            userNumbers.push(parseFloat(outputValue))
             outputValue = operate(userNumbers[0], operator, userNumbers[1])
             equation += userNumbers[1] + " = "
             userNumbers = [outputValue]
@@ -86,7 +93,7 @@ function operationPressed(operation){
         switch(userNumbers.length){
             case 0:
                 if(outputValue != ""){
-                    userNumbers.push(parseInt(outputValue))
+                    userNumbers.push(parseFloat(outputValue))
                     equation += outputValue + " " + operation + " "
                     operator = operation
                     clearValue()
@@ -96,7 +103,7 @@ function operationPressed(operation){
             case 1:
                 if(outputValue != ""){
                     
-                        userNumbers.push(parseInt(outputValue))
+                        userNumbers.push(parseFloat(outputValue))
                         outputValue = operate(userNumbers[0], operator, userNumbers[1])
                         userNumbers = [outputValue]
                         equation = outputValue + " " + operation + " "
@@ -162,8 +169,11 @@ function clearValueAndEquation(){
 }
 
 function clear(){
-    outputValue = outputValue.slice(0, -1);
-    updateValue()
+    if(outputValue != ""){
+        outputValue = outputValue.slice(0, -1);
+        updateValue()
+    }
+    
 }
 
 function clearAll(){
@@ -201,7 +211,7 @@ function buttonClicked(button){
             operationPressed(button.dataset.type);
             break;
         case ".":
-
+            addDecimal()
             break;
         case "pi":
             
