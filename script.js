@@ -75,15 +75,21 @@ function numberPressed(num){
 function operationPressed(operation){
     
     if(operation === "="){
+        
         if(outputValue != ""){
-            userNumbers.push(parseFloat(outputValue))
-            outputValue = operate(userNumbers[0], operator, userNumbers[1])
-            equation += userNumbers[1] + " = "
-            userNumbers = [outputValue]
+            if(userNumbers.length == 0){
+                
+            }else{
+                userNumbers.push(parseFloat(outputValue))
+                outputValue = operate(userNumbers[0], operator, userNumbers[1])
+                equation += userNumbers[1] + " = "
+                userNumbers = [outputValue]
+                
+                operator = operation
+                updateValueAndEquation()
+                clearValue()
+            }
             
-            operator = operation
-            updateValueAndEquation()
-            clearValue()
             
         }
 
@@ -94,7 +100,7 @@ function operationPressed(operation){
             case 0:
                 if(outputValue != ""){
                     userNumbers.push(parseFloat(outputValue))
-                    equation += outputValue + " " + operation + " "
+                    equation = outputValue + " " + operation + " "
                     operator = operation
                     clearValue()
                     updateEquation()
