@@ -56,8 +56,11 @@ function divide(num1, num2){
 function addDecimal(){
     if(outputValue != ""){
         outputValue += "."
-        updateValue()
+        
+    }else{
+        outputValue = "0."
     }
+    updateValue()
 }
 
 function numberPressed(num){
