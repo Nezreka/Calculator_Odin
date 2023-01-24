@@ -55,7 +55,10 @@ function divide(num1, num2){
 
 function addDecimal(){
     if(outputValue != ""){
-        outputValue += "."
+        if(!outputValue.includes(".")){
+            outputValue += "."
+        }
+        
         
     }else{
         outputValue = "0."
