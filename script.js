@@ -234,4 +234,23 @@ function buttonClicked(button){
 
 }
 
+window.addEventListener("keydown", (e) => {
+    switch(String(e.key)){
+        case "0": case "1": case "2": case "3": case "4": case "5": case "6": case "7": case "8": case "9":
+        numberPressed(String(e.key))
+            break; 
+        case ".":
+            addDecimal()
+            break;
+        case "+": case "-": case "*": case "/":
+            operationPressed(String(e.key))
+            break;
+        case "Enter":
+            operationPressed("=")
+            break; 
+        default:
+            console.log("the rest")
+    }
+  });
+
 setButtons();
